@@ -13,18 +13,19 @@ export default function App() {
 
   function handlePrevious() {
     if(step >1) 
-      setStep(step - 1);
+      setStep((s) => s - 1);
   }
 
   function handleNext() {
     if (step < 3) 
-      setStep(step + 1);
+      setStep(s => s + 1);
+/*       setStep(s => s + 1); 2 adım atlamak için */
 /*       test.name = 'fadis';  never use this*/ 
-      setTest({ name: 'fadis' }); // correct way to update state
+/*       setTest({ name: 'fadis' }); // correct way to update state */
   }
   return (
     <div>
-      <button className = "close" onClick = {() => setIsOpen(!isOpen)}> &times;
+      <button className = "close" onClick = {() => setIsOpen((is) => !is)}> &times;
       </button>
 
       {isOpen && (
